@@ -43,4 +43,4 @@ if __name__ == "__main__":
     for client in botNet:
         session = Process(target=botnetCommand, args=(order,client))
         session.start()
-        session.join()
+        
