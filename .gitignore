@@ -2,3 +2,4 @@ __pycache__
 .gitignore .gitignore .gitignore .gitignore .gitignore .git
 test.*
 botlist.*
+back*
