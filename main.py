@@ -5,6 +5,6 @@ listip = Scanbot.scan()
 
 Scanbot.display_result(listip)
 
-Telnet.telnetBot(listip)
+Telnet.telnet(listip)
 
 
