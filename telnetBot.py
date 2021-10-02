@@ -1,12 +1,13 @@
 
 from telnetlib import Telnet
 import os
+from multiprocessing import Process
 
 class Telnet:
-    def telnet(listip):
-        for ip in listip:
-            try:
-                os.system("telnet "+ip)
-            except:
-                print('Could not connect. Exiting')
+    def telnet(ip):
+        try:
+            os.system("telnet "+ip)
+
+        except:                
+            print('Could not connect. Exiting')
 
