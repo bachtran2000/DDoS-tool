@@ -35,5 +35,5 @@ def addClient(host, user, password):
 
 order = input("Command:")
 botNet = []
-addClient('172.16.162.7', 'kali', 'kali') 
+addClient('192.168.1.9', 'kali', 'kali') 
 botnetCommand(order)
