@@ -30,6 +30,8 @@ class Scanbot:
         return result
     
     def display_result(result):
-        print('List bot')
+        print('List bot:\n')
         for i in result:
             print(i)
+    
+    
