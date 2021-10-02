@@ -1,7 +1,6 @@
 
 from pexpect import pxssh
 class Client:
-    
     def __init__(self, host, user, password):
         self.host = host
         self.user = user
@@ -21,3 +20,4 @@ class Client:
         self.session.sendline(cmd)
         self.session.prompt()
         return self.session.before
+

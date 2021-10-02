@@ -11,4 +11,8 @@ class Command:
 
     def addClient():
         botNet = RW.readBot()
-        return botNet
+        listBot=[]
+        for bot in botNet:
+            client = Client(bot[0], bot[1], bot[2])
+            listBot.append(client)
+        return listBot
