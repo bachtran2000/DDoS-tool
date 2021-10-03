@@ -16,7 +16,7 @@ class RW:
     def saveBot(listip):
         f = open("botlist.txt", "w")
         for ip in listip:
-            f.write(ip+"$kali$kali\n")
+            f.write(ip+"\n")
         f.close()
 
     def readBot():
