@@ -8,7 +8,7 @@ class SSHtoBotnet:
         for client in open('botlist.txt','r').readlines():
             result = client.split("$")
             hosts.append(str(result[0]))
-            config.append([HostConfig(user=str(result[1]), password=str(result[2]))])
+            config.append(HostConfig(user=str(result[1]), password=str(result[2])))
 
         client = ParallelSSHClient(hosts,host_config=config)
 
