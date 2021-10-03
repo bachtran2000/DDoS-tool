@@ -20,13 +20,16 @@ def menu():
     print('2. Start attack')
     i = input('Select: ')
     return i
-while True:
+
+if __name__ == '__main__':
     c = menu()
     if c == 1:
+        print('Selected Scan bot')
         listip = Scanbot.scan()
         Scanbot.display_result(listip)
         RW.saveBot(listip)
     elif c == 2:
+        print('Selected Start attack')
         ip = input('IP Victim: ')
         port = input('Port Victim: ')
 
