@@ -24,12 +24,12 @@ def menu():
 if __name__ == '__main__':
     c = menu()
     print('Selected:',c)
-    if c == 1:
+    if c == "1":
         print('Selected Scan bot')
         listip = Scanbot.scan()
         Scanbot.display_result(listip)
         RW.saveBot(listip)
-    elif c == 2:
+    elif c == "2":
         print('Selected Start attack')
         ip = input('IP Victim: ')
         port = input('Port Victim: ')
