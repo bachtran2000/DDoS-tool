@@ -14,6 +14,6 @@ class Command:
         for i in f.readlines():
             result = i.split("$")
             client = Client(result[0], result[1], result[2])
-            session = Process(target=)
+            # session = Process(target=)
             listBot.append(client)
         return listBot
