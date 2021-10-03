@@ -23,6 +23,7 @@ def menu():
 
 if __name__ == '__main__':
     c = menu()
+    print('Selected:',c)
     if c == 1:
         print('Selected Scan bot')
         listip = Scanbot.scan()
