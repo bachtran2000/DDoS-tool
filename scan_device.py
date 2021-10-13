@@ -34,4 +34,6 @@ class Scanbot:
         for i in result:
             print(i)
     
-    
+i = Scanbot.scan()   
+for t in i:
+    print(t)
